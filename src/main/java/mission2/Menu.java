@@ -34,8 +34,8 @@ public class Menu {
     public void showBrakeMenu() {
         System.out.println("어떤 제동장치를 선택할까요?");
         System.out.println("0. 뒤로가기");
-        for (int i = 1; i <= CarPartSetting.getMaxSteeringId(); i++) {
-            String name = CarPartSetting.STEERINGS.get(i);
+        for (int i = 1; i <= CarPartSetting.getMaxBrakeId(); i++) {
+            String name = CarPartSetting.BRAKES.get(i);
             if (name != null) {
                 System.out.println(i + ". " + name);
             }
