@@ -4,18 +4,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
 
-/*
-        Object[][] combinationRules = {
-                { stack[Engine_Q] == 4,"엔진이 고장나있습니다."},
-                { stack[CarType_Q] == SEDAN && stack[BrakeSystem_Q] == CONTINENTAL, "Sedan에는 Continental 제동장치 사용 불가" },
-                { stack[CarType_Q] == SUV && stack[Engine_Q] == TOYOTA, "SUV에는 TOYOTA 엔진 사용 불가" },
-                { stack[CarType_Q] == TRUCK && stack[Engine_Q] == WIA, "Truck에는 WIA 엔진 사용 불가" },
-                { stack[CarType_Q] == TRUCK && stack[BrakeSystem_Q] == MANDO, "Truck에는 Mando 제동장치 사용 불가" },
-                { stack[BrakeSystem_Q] == BOSCH_B && stack[SteeringSystem_Q] != BOSCH_S, "Bosch 제동장치에는 Bosch 조향장치 이외 사용 불가" }
-        };
- */
 public class ValidateSetTest {
 
     @Test

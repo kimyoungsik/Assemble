@@ -5,13 +5,12 @@ import org.junit.jupiter.api.Test;
 
 class SteeringTest {
     Steering steering = Steering.getInstance();
+
     @Test
     void getSteeringId() {
         steering.setSteeringId(1);
         Assertions.assertThat(steering.getSteeringId()).isEqualTo(1);
     }
-
-  //  private static final int BOSCH_S = 1, MOBIS = 2;
 
     @Test
     void getSteeringName() {
@@ -24,6 +23,7 @@ class SteeringTest {
         steering.setSteeringId(2);
         Assertions.assertThat(steering.getSteeringName()).isEqualTo("Mobis");
     }
+
     @Test
     void getSteeringName_Unknown() {
         steering.setSteeringId(3);

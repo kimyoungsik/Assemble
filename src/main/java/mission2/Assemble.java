@@ -1,14 +1,15 @@
 package mission2;
+
 import java.util.Scanner;
 
 public class Assemble {
     private static final String CLEAR_SCREEN = "\033[H\033[2J";
 
-    private static final int CarType_Q      = 0;
-    private static final int Engine_Q       = 1;
-    private static final int BrakeSystem_Q  = 2;
+    private static final int CarType_Q = 0;
+    private static final int Engine_Q = 1;
+    private static final int BrakeSystem_Q = 2;
     private static final int SteeringSystem_Q = 3;
-    private static final int Run_Test       = 4;
+    private static final int Run_Test = 4;
 
 
     private static int[] stack = new int[5];
@@ -91,7 +92,7 @@ public class Assemble {
 
     private static void selectCarType(int chooseNumber) {
         carType = CarPartFactory.createCarType(chooseNumber);
-        displaySelection( "차량 타입으로", carType.getCarTypeName()+"을");
+        displaySelection("차량 타입으로", carType.getCarTypeName() + "을");
     }
 
     private static void selectEngine(int chooseNumber) {
@@ -100,13 +101,13 @@ public class Assemble {
     }
 
     private static void selectBrakeSystem(int chooseNumber) {
-        brake =CarPartFactory.createBrake(chooseNumber);
-        displaySelection(brake.getBrakeName(),"제동장치를");
+        brake = CarPartFactory.createBrake(chooseNumber);
+        displaySelection(brake.getBrakeName(), "제동장치를");
     }
 
     private static void selectSteeringSystem(int chooseNumber) {
         steering = CarPartFactory.createSteering(chooseNumber);
-        displaySelection(steering.getSteeringName(),"조향장치를");
+        displaySelection(steering.getSteeringName(), "조향장치를");
     }
 
     private static void displaySelection(String firstString, String secondString) {
@@ -142,7 +143,6 @@ public class Assemble {
         return true;
     }
 
-
     private static void displayPass() {
         System.out.println("자동차 부품 조합 테스트 결과 : PASS");
     }
@@ -155,6 +155,7 @@ public class Assemble {
     private static void delay(int ms) {
         try {
             Thread.sleep(ms);
-        } catch (InterruptedException ignored) {}
+        } catch (InterruptedException ignored) {
+        }
     }
 }

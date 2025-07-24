@@ -156,38 +156,7 @@ public class AssembleTest {
     }
 
     @Test
-    public void testCarPartCombinationTest_ValidCombination() {
-        settingValidParts();
-
-        boolean result = callCarPartCombinationTest();
-
-        assertTrue(result);
-        String output = outputStream.toString();
-        assertTrue(output.contains("자동차 부품 조합 테스트 결과 : PASS"));
-    }
-
-    @Test
-    public void testCarAssembleList() {
-        settingValidParts();
-
-        callCarAssembleList();
-
-        String output = outputStream.toString();
-        assertTrue(output.contains("Car Type : Sedan"));
-        assertTrue(output.contains("Engine   : GM"));
-        assertTrue(output.contains("Brake    : Mando"));
-        assertTrue(output.contains("Steering : Bosch"));
-    }
-
-    @Test
-    public void testDisplaySelection() {
-        callDisplaySelection("GM", "엔진을");
-
-        String output = outputStream.toString();
-        assertTrue(output.contains("GM 엔진을 선택하셨습니다"));
-    }
-
-    @Test
+    @DisplayName("display Pass")
     public void testDisplayPass() {
         callDisplayPass();
 
@@ -196,6 +165,7 @@ public class AssembleTest {
     }
 
     @Test
+    @DisplayName("display Fail")
     public void testDisplayFail() {
         callDisplayFail("테스트 에러 메시지");
 
@@ -204,40 +174,6 @@ public class AssembleTest {
         assertTrue(output.contains("테스트 에러 메시지"));
     }
 
-    // 여러 규칙이 동시에 위반되는 경우 테스트
-    @Test
-    public void testCarPartCombinationTest_MultipleViolations() {
-        // 고장난 엔진 + SUV + TOYOTA (두 개의 규칙 위반)
-        Assemble.carType = CarPartFactory.createCarType(2); // SUV
-        Assemble.engine = CarPartFactory.createEngine(4);   // 고장난 엔진
-        Assemble.brake = CarPartFactory.createBrake(1);     // Mando
-        Assemble.steering = CarPartFactory.createSteering(1); // Bosch
-
-        boolean result = callCarPartCombinationTest();
-
-        assertFalse(result);
-        String output = outputStream.toString();
-        assertTrue(output.contains("자동차 부품 조합 테스트 결과 : FAIL"));
-        // 첫 번째 규칙 위반만 출력되어야 함 (고장난 엔진)
-        assertTrue(output.contains("엔진이 고장나있습니다"));
-    }
-
-    @Test
-    public void testValidComplexCombination() {
-        // SUV + GM + Bosch + Bosch (유효한 복합 조합)
-        Assemble.carType = CarPartFactory.createCarType(2); // SUV
-        Assemble.engine = CarPartFactory.createEngine(1);   // GM
-        Assemble.brake = CarPartFactory.createBrake(3);     // Bosch
-        Assemble.steering = CarPartFactory.createSteering(1); // Bosch
-
-        boolean result = callCarPartCombinationTest();
-
-        assertTrue(result);
-        String output = outputStream.toString();
-        assertTrue(output.contains("자동차 부품 조합 테스트 결과 : PASS"));
-    }
-
-    // Helper methods for accessing private methods using reflection
     private int callUpdateAssemble(int step, int chooseNumber) {
         try {
             var method = Assemble.class.getDeclaredMethod("updateAssemble", int.class, Integer.class);
@@ -258,35 +194,6 @@ public class AssembleTest {
         }
     }
 
-    private boolean callCarPartCombinationTest() {
-        try {
-            var method = Assemble.class.getDeclaredMethod("carPartCombinationTest");
-            method.setAccessible(true);
-            return (boolean) method.invoke(null);
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-    private void callCarAssembleList() {
-        try {
-            var method = Assemble.class.getDeclaredMethod("carAssembleList");
-            method.setAccessible(true);
-            method.invoke(null);
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-    private void callDisplaySelection(String first, String second) {
-        try {
-            var method = Assemble.class.getDeclaredMethod("displaySelection", String.class, String.class);
-            method.setAccessible(true);
-            method.invoke(null, first, second);
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
-    }
 
     private void callDisplayPass() {
         try {

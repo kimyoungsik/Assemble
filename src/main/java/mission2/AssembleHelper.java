@@ -5,12 +5,11 @@ import java.util.Scanner;
 public class AssembleHelper {
 
     private static final String CLEAR_SCREEN = "\033[H\033[2J";
-    private static final int CarType_Q      = 0;
-    private static final int Engine_Q       = 1;
-    private static final int BrakeSystem_Q  = 2;
+    private static final int CarType_Q = 0;
+    private static final int Engine_Q = 1;
+    private static final int BrakeSystem_Q = 2;
     private static final int SteeringSystem_Q = 3;
-    private static final int Run_Test       = 4;
-
+    private static final int Run_Test = 4;
 
     Menu menu;
 
@@ -26,15 +25,20 @@ public class AssembleHelper {
     void showCarParts(int step) {
         switch (step) {
             case CarType_Q:
-                this.menu.showCarTypeMenu(); break;
+                this.menu.showCarTypeMenu();
+                break;
             case Engine_Q:
-                menu.showEngineMenu(); break;
+                menu.showEngineMenu();
+                break;
             case BrakeSystem_Q:
-                menu.showBrakeMenu(); break;
+                menu.showBrakeMenu();
+                break;
             case SteeringSystem_Q:
-                menu.showSteeringMenu(); break;
+                menu.showSteeringMenu();
+                break;
             case Run_Test:
-                menu.showRunTestMenu(); break;
+                menu.showRunTestMenu();
+                break;
         }
     }
 
@@ -62,10 +66,12 @@ public class AssembleHelper {
         }
         return convertedNumber;
     }
+
     static void delay(int ms) {
         try {
             Thread.sleep(ms);
-        } catch (InterruptedException ignored) {}
+        } catch (InterruptedException ignored) {
+        }
     }
 
     static boolean isValidRange(int step, int ans) {
@@ -116,7 +122,4 @@ public class AssembleHelper {
         }
         return step;
     }
-
-
-
 }

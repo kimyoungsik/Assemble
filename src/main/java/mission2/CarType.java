@@ -3,9 +3,12 @@ package mission2;
 public class CarType {
 
     static CarType instance = null;
-    private CarType(){}
-    static CarType getInstance(){  //싱글톤이구나
-        if(instance ==null) instance = new CarType(); //없으면 생성
+
+    private CarType() {
+    }
+
+    static CarType getInstance() {
+        if (instance == null) instance = new CarType();
         return instance;
     }
 

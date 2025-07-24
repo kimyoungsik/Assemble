@@ -169,7 +169,7 @@ public class AssembleHelperTest {
     }
 
     @Test
-    @DisplayName("잘놋된 단계에서 error 발생")
+    @DisplayName("잘못된 단계에서 error 발생")
     public void testIsValidRange_ErrorMessages() {
         outputStream.reset();
         AssembleHelper.isValidRange(7, 1);

@@ -18,6 +18,7 @@ public class Menu {
         }
         System.out.println("===============================");
     }
+
     public void showEngineMenu() {
         System.out.println("어떤 엔진을 탑재할까요?");
         System.out.println("0. 뒤로가기");
@@ -29,6 +30,7 @@ public class Menu {
         }
         System.out.println("===============================");
     }
+
     public void showBrakeMenu() {
         System.out.println("어떤 제동장치를 선택할까요?");
         System.out.println("0. 뒤로가기");
@@ -40,6 +42,7 @@ public class Menu {
         }
         System.out.println("===============================");
     }
+
     public void showSteeringMenu() {
         System.out.println("어떤 조향장치를 선택할까요?");
         System.out.println("0. 뒤로가기");
@@ -47,6 +50,7 @@ public class Menu {
         System.out.println("2. MOBIS");
         System.out.println("===============================");
     }
+
     public void showRunTestMenu() {
         System.out.println("멋진 차량이 완성되었습니다.");
         System.out.println("어떤 동작을 할까요?");
@@ -55,7 +59,6 @@ public class Menu {
         System.out.println("2. Test");
         System.out.println("===============================");
     }
-
 
 
 }

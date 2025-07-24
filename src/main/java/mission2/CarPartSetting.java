@@ -39,13 +39,35 @@ public class CarPartSetting {
 
     );
 
-    public static boolean isValidCarType(int id) { return CAR_TYPES.containsKey(id); }
-    public static boolean isValidEngine(int id) { return ENGINES.containsKey(id); }
-    public static boolean isValidBrake(int id) { return BRAKES.containsKey(id); }
-    public static boolean isValidSteering(int id) { return STEERINGS.containsKey(id); }
+    public static boolean isValidCarType(int id) {
+        return CAR_TYPES.containsKey(id);
+    }
 
-    public static int getMaxCarTypeId() { return Collections.max(CAR_TYPES.keySet()); }
-    public static int getMaxEngineId() { return Collections.max(ENGINES.keySet()); }
-    public static int getMaxBrakeId() { return Collections.max(BRAKES.keySet()); }
-    public static int getMaxSteeringId() { return Collections.max(STEERINGS.keySet()); }
+    public static boolean isValidEngine(int id) {
+        return ENGINES.containsKey(id);
+    }
+
+    public static boolean isValidBrake(int id) {
+        return BRAKES.containsKey(id);
+    }
+
+    public static boolean isValidSteering(int id) {
+        return STEERINGS.containsKey(id);
+    }
+
+    public static int getMaxCarTypeId() {
+        return Collections.max(CAR_TYPES.keySet());
+    }
+
+    public static int getMaxEngineId() {
+        return Collections.max(ENGINES.keySet());
+    }
+
+    public static int getMaxBrakeId() {
+        return Collections.max(BRAKES.keySet());
+    }
+
+    public static int getMaxSteeringId() {
+        return Collections.max(STEERINGS.keySet());
+    }
 }

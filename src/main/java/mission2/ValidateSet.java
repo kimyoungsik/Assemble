@@ -24,13 +24,10 @@ public class ValidateSet {
         if (steeringId == -1) {
             return steering != 1;
         }
-
-        /*else if (steeringId != 0 && steering != steeringId) {
-            return false;
-        }*/
-
         return true;
     }
 
-    public String getErrorMessage() { return errorMessage; }
+    public String getErrorMessage() {
+        return errorMessage;
+    }
 }
